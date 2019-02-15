@@ -77,18 +77,20 @@ class SwapAspect {
             animation: false
         }
     ;
-    const bubbleHandle = echarts.init(document.getElementById('bubble-echarts'));
-    bubbleHandle.setOption(commonOption);
-    const selectionHandle = echarts.init(document.getElementById('selection-echarts'));
-    selectionHandle.setOption(commonOption);
-    const insertionHandle = echarts.init(document.getElementById('insertion-echarts'));
-    insertionHandle.setOption(commonOption);
-    const quickHandle = echarts.init(document.getElementById('quick-echarts'));
-    quickHandle.setOption(commonOption);
-    const heapHandle = echarts.init(document.getElementById('heap-echarts'));
-    heapHandle.setOption(commonOption);
-    const combHandle = echarts.init(document.getElementById('comb-echarts'));
-    combHandle.setOption(commonOption);
+
+    const initEcharts = function (domId) {
+        const handle = echarts.init(document.getElementById(domId), {renderer: 'svg'});
+        handle.resize();
+        handle.setOption(commonOption);
+        return handle;
+    };
+
+    const bubbleHandle = initEcharts('bubble-echarts');
+    const selectionHandle = initEcharts('selection-echarts');
+    const insertionHandle = initEcharts('insertion-echarts');
+    const quickHandle = initEcharts('quick-echarts');
+    const heapHandle = initEcharts('heap-echarts');
+    const combHandle = initEcharts('comb-echarts');
 
     const animationInProcessQueue = [];
 
