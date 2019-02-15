@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In Place Sort Animation</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style>
+        .media {
+            overflow-x: scroll;
+        }
+
+        .sort-animation-item {
+            padding: 0.7em;
+            font-family: "Kaiti", "STKaiti", "Microsoft YaHei", sans-serif;
+        }
+
+        .sort-canvas-wrapper {
+        }
+
+
+        .sort-canvas-wrapper canvas {
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="page-header">
+        <h3>In Place Sort Animation</h3>
+    </div>
+    <form class="form-inline">
+        <div class="form-group">
+            <label for="array-size-input">Array Size:</label>
+            <input class="form-control" type="number" id="array-size-input" value="20">
+        </div>
+        <button class="btn btn-default" id="run-animation-btn" type="button">Run!</button>
+    </form>
+    <hr>
+    <div class="row">
+        <div class="col-md-6 sort-animation-item">
+            <div class="media">
+                <div class="media-middle">
+                    <h4 class="media-heading">快速排序(quick sort)</h4>
+                    <a href="javascript:void(0);">
+                        <div class="media-object sort-canvas-wrapper" id="quick-echarts"
+                             style="width: 533px;height: 300px;"></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 sort-animation-item">
+            <div class="media">
+                <div class="media-middle">
+                    <h4 class="media-heading">堆排序(heap sort)</h4>
+                    <a href="javascript:void(0);">
+                        <div class="media-object sort-canvas-wrapper" id="heap-echarts"
+                             style="width: 533px;height: 300px;"></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 sort-animation-item">
+            <div class="media">
+                <div class="media-middle">
+                    <h4 class="media-heading">梳排序(comb sort)</h4>
+                    <a href="javascript:void(0);">
+                        <div class="media-object sort-canvas-wrapper" id="comb-echarts"
+                             style="width: 533px;height: 300px;"></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 sort-animation-item">
+            <div class="media">
+                <div class="media-middle">
+                    <h4 class="media-heading">插入排序(insertion sort)</h4>
+                    <a href="javascript:void(0);">
+                        <div class="media-object sort-canvas-wrapper" id="insertion-echarts"
+                             style="width: 533px;height: 300px;"></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 sort-animation-item">
+            <div class="media">
+                <div class="media-middle">
+                    <h4 class="media-heading">冒泡排序(bubble sort)</h4>
+                    <a href="javascript:void(0);">
+                        <div class="media-object sort-canvas-wrapper" id="bubble-echarts"
+                             style="width: 533px;height: 300px;"></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 sort-animation-item">
+            <div class="media">
+                <div class="media-middle">
+                    <h4 class="media-heading">选择排序(selection sort, 选择排序看似很快是因为选择最大这步没有可视化)</h4>
+                    <a href="javascript:void(0);">
+                        <div class="media-object sort-canvas-wrapper" id="selection-echarts"
+                             style="width: 533px;height: 300px;"></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer col-md-12">
+        <p class="text-center">&copy;<script>document.write(new Date().getFullYear());</script>
+            &nbsp;elasticdogs.com,
+            Any question please send Email to <a href="mailto:zhaoyuyuatenshi@qq.com">zhaoyuyuatenshi@qq.com</a></p>
+    </footer>
+
+
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap.native/2.0.24/bootstrap-native.min.js"
+        integrity="sha256-uvE2kQ51Y9LF9kVpIWSJ/e/bFghzcAbl+wQLrvVTWWs=" crossorigin="anonymous"></script>
+<script src="https://cdn.bootcss.com/echarts/4.0.4/echarts.min.js"></script>
+<script src="sort.js" type="text/javascript"></script>
+</body>
+</html>
