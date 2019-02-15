@@ -248,4 +248,13 @@ class SwapAspect {
         });
     });
 
+    window.addEventListener('resize', function () {
+        bubbleHandle.resize();
+        insertionHandle.resize();
+        selectionHandle.resize();
+        quickHandle.resize();
+        heapHandle.resize();
+        combHandle.resize();
+    });
+
 })(echarts);
